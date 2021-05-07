@@ -1,0 +1,56 @@
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
+}
+
+li,
+li:visited,
+li:hover{
+    list-style: none;
+    text-decoration: none;
+}
+
+//PageWrap
+.page-wrap {
+    background: white;
+    height: auto;
+    box-shadow: 0 0 3px rgba(black, 0.33);
+  
+    display: grid;
+    grid-template-columns: minmax(10px, 1fr) minmax(10px, 3fr);
+    grid-template-rows: min-content min-content 1fr min-content;
+    gap: 1px;
+  
+    > * {
+      padding: 1rem;
+    }
+  
+    @media (max-width: 600px) {
+      grid-template-columns: 100%;
+      grid-template-rows: auto;
+      > * {
+        grid-column: 1 / -1 !important;
+        grid-row: auto !important;
+      }
+    }
+  }
+  
+

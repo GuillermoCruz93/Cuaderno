@@ -1,0 +1,21 @@
+.page-header {
+    grid-column: 1 / -1;
+    background: #ffcdd2;
+}
+
+.page-main {
+    grid-column: 2 / 3;
+    background: #dcedc8;
+}
+
+details p {
+    text-transform: none;
+    text-align: left;
+  }
+
+
+.page-footer {
+    grid-column: 1 / -1;
+    background: #ffecb3;
+}
+
