@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app/scss/style.css">
+    <title>Cuaderno|Lenguaje C</title>
+</head>
+
+<body>
+    <div class="page-wrap">
+
+        <header class="page-header">
+            <h1 id="Top">Cuaderno</h1>
+        </header>
+
+        <nav class="page-nav">
+            <a href="#">Home</a>
+            <a href="/LenguajeC/tema1.html">Lenguaje C</a>
+        </nav>
+
+
+        <main class="page-main">
+            <article>
+                <h1 id="Tema1">1 - Introducción.</h1>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;El lenguaje de programacion C fue creado por Briand Kernighan y Dennis
+                    Ritchie a mediados de los años 70's. La primera implementación del mismo la realizó Dennis
+                    Ritchie sobre un computador DEC PDC-11 con sistema operativo UNIX. C es el resultado de un
+                    proceso de desarrollo que comenzó con un lenguaje anterior, el BCPL, el cual influyó en el
+                    desarrollo por parte de Ken Thompson de un leguaje llamado B, el cual es el antecedente directo
+                    del lenguaje C. El Lenguaje C es un lenguaje para programadores en el sentido que proporciona
+                    una gran flexibilidad de programación y una baja comprobación de incorrecciones, de forma que el
+                    lenguaje deja bajo la responsabilidad del programador acciones que otros lenguajes realizan or
+                    si mismos. Así, por ejemplo, C no comprueba que el indice de referencia de un vector(llamado
+                    array en literatura informática) no sobrepase el tamaño del mismo; que no se escriba en zonas de
+                    memoria que no pertenecen al área de datos del programa, etc.
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;El lenguahe C es un lenguaje estructurado, en el mismo sentido que lo
+                    son otros lenguajes de progrmación tales como el lenguaje de Pascal, el Ada o el Modula-2, pero
+                    no es estructurado por bloques, o sea, no es posible declarar subrutinas(pequeños trozos de
+                    programa) dentro de otras subrutinas, a diferencia de como sucede con otros lenguajes
+                    estructurados tales como Pascal. Además el lenguaje C no es rígido en la comprobacion de tipos
+                    de datos, permitiendo fácilmente la conversíon entre diferentes tipos de datos y la asignación
+                    entre tipos de datos diferentes, por ejemplo la espresión siguiente es válida en C:
+                </p>
+                <div class="code">
+                    <pre> <code>
+                            
+float a; /*Declaro una variable para numeros reales*/
+int b; /*Declaro una variable para numeros enteros*/
+b = a; /*Asigno a la variable para enterar el numero real*/
+
+                        </code></pre>
+                </div>
+                <p>
+                    Todo programa de C consta, básicamente, de un conjunto de funciones, y una función llamada main,
+                    la cual es la primera que se ejecuta al comenzar el programa, llamándose desde ella al resto de
+                    funciones que compongan nuestro programa.
+                </p>
+
+                <p>
+                    Desde su creación, surgieron distintas versiones de C, que incluían unas u otras
+                    características, palabras reservadas, etc. Este hecho provoco la necesidad de unificar el
+                    lenguaje C, y es por ello que surgió un standard de C, llamado ANSI-C, que declara una serie de
+                    características, etc., que debe cumplir todo lenguaje C. Por ello, y dado que todo programa que
+                    se desarrolle siguiendo el standar ANSI de C será fácilmente portable de un modelo de ordenador
+                    a otro modelo de ordenador, y que igual forma de un modelo de compilador a otro, en estos
+                    apuntes explicaremos un C basado en el standard ANSI-C.
+                </p>
+                <table class="table__1">
+                    <tr>
+                        <td>auto</td>
+                        <td>break</td>
+                        <td>case</td>
+                        <td>char</td>
+                        <td>const</td>
+                        <td>continue</td>
+                        <td>default</td>
+                    </tr>
+                    <tr>
+                        <td>do</td>
+                        <td>double</td>
+                        <td>else</td>
+                        <td>enum</td>
+                        <td>extern</td>
+                        <td>float</td>
+                        <td>for</td>
+                    </tr>
+                    <tr>
+                        <td>goto</td>
+                        <td>if</td>
+                        <td>int</td>
+                        <td>long</td>
+                        <td>register</td>
+                        <td>return</td>
+                        <td>short</td>
+                    </tr>
+                    <tr>
+                        <td>signed</td>
+                        <td>sizeof</td>
+                        <td>static</td>
+                        <td>struct</td>
+                        <td>switch</td>
+                        <td>typedef</td>
+                        <td>union</td>
+                    </tr>
+                    <tr>
+                        <td>unsigned</td>
+                        <td>void</td>
+                        <td>volatile</td>
+                        <td>while</td>
+                    </tr>
+                </table>
+                <span>Tabla 1.1: Palabras reservadas del Lenguaje C</span>
+            </article>
+        </main>
+
+        <aside class="page-sidebar">
+            <h2>Lenguaje C</h2>
+            <nav id="indice">
+                <ul>
+                    <li><a href="/LenguajeC/tema1.html#Tema1">1.-Introduccion</a> </li>
+                    <li><a href="/LenguajeC/tema2.html#Tema2">2.-Identificadores,tipo de datos, variables y
+                            constantes.</a>
+                        <ul>
+                            <li><a href="/LenguajeC/tema2.html#Tema2.1">2.1.-Identificadores</a></li>
+                            <li><a href="/LenguajeC/tema2.html#Tema2.2">Opción 2.2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Opción 3</a></li>
+                    <li><a href="#">Opción 4</a>
+                        <ul>
+                            <li><a href="#">Opción 4.1</a></li>
+                            <li><a href="#">Opción 4.2</a></li>
+                            <li><a href="#">Opción 4.3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <footer class="page-footer">
+            <p>Guillermo Cruz Pineda</p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -6,16 +6,32 @@
 .page-main {
     grid-column: 2 / 3;
     background: #dcedc8;
+    text-align: justify;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    
+
+    article {
+        grid-column: 2/12;
+    }
+
+    .code {
+        text-align: justify;
+        background-color: wheat;
+        grid-column: 2/12;
+    }
 }
 
-details p {
-    text-transform: none;
-    text-align: left;
-  }
 
+@media screen and (min-width: 320px) {
+    code {
+        display: block;
+        overflow-x: auto;
+    }
+}
 
 .page-footer {
     grid-column: 1 / -1;
     background: #ffecb3;
+    text-align: center;
 }
-

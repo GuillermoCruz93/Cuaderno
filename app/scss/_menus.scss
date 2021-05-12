@@ -1,7 +1,9 @@
 .page-sidebar {
+    min-height: 81vh;
     grid-column: 1 / 2;
     grid-row: 2 / 4;
     background: #e1bee7;
+
 
     #indice li ul {
         height: 0;
