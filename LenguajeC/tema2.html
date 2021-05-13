@@ -27,40 +27,208 @@
                 <h1>2 - Identificadores, tipos de datos, variables y constantes.</h1>
                 <h2>2.1 - Identificadores.</h2>
                 <p>
-                    Antes de proceder a explicar los identificadores en C, es necesario resaltar que
+                    &nbsp;&nbsp;&nbsp;&nbsp;Antes de proceder a explicar los identificadores en C, es necesario resaltar
+                    que
                     C es un lenguaje sensible al contexto, a diferencia por ejemplo de Pascal, por lo cual, C
                     diferencia entre mayúsculas y minúsculas, y por tanto, diferencia entre una palabra
                     escrita total o parcialmente en mayúsculas y otra escrita completamente en
                     minúsculas.
                 </p>
                 <p>
-                    En el lenguaje C, un identificador es cualquier palabra no reservada que
+                    &nbsp;&nbsp;&nbsp;&nbsp;En el lenguaje C, un identificador es cualquier palabra no reservada que
                     comience por una letra o por un subrayado, pudiendo contener en su interior letras,
                     números y subrayados. La longitud máxima de un identificador depende del
                     compilador que se este usando, pero, generalmente, suelen ser de 32 caracteres,
                     ignorándose todos aquellos caracteres que compongan el identificador y sobrepasen la
                     longitud máxima. Recuérdese, además, que al ser C sensible al contexto, un
-                    identificador escrito como esto_es_un_ident y otra vez como Esto_Es_Un_Ident será
+                    identificador escrito como <em>esto_es_un_ident</em> y otra vez como <em>Esto_Es_Un_Ident</em> será
                     interpretado como dos identificadores completamente distintos.
                 </p>
                 <h2>2.2 - Tipos de datos, modificadores de tipo y modificadores
                     de acceso</h2>
 
                 <p>
-                    En C, toda variable, antes de poder ser usada, debe ser declarada, especificando
+                    &nbsp;&nbsp;&nbsp;&nbsp;En C, toda variable, antes de poder ser usada, debe ser declarada,
+                    especificando
                     con ello el tipo de dato que almacenara. Toda variable en C se declara de la forma:
                 </p>
                 <div class="code">
                     <code>
                         <pre>
-&lt;tipo de dato> &lt;nombre de variable> [, nombre de variable];
-                </pre></code>
+    &lt;tipo de dato> &lt;nombre de variable> [, nombre de variable];
+                        </pre>
+                    </code>
                 </div>
                 <p>
-                    En C existen cinco tipos de datos según puede verse en la tabla siguiente:
+                    &nbsp;&nbsp;&nbsp;&nbsp;En C existen cinco tipos de datos según puede verse en la tabla siguiente:
                 </p>
-                
 
+                <div class="table">
+                    <table class="table__2">
+                        <tr>
+                            <th>Tipo de Dato</th>
+                            <th>Descripcion</th>
+                        </tr>
+                        <tr>
+                            <td>char</td>
+                            <td>Caracter o entero pequeño</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <td>Entero</td>
+                        </tr>
+                        <tr>
+                            <td>float</td>
+                            <td>Punto flotante</td>
+                        </tr>
+                        <tr>
+                            <td>double</td>
+                            <td>Punto flotante(mayor rango que float)</td>
+                        </tr>
+                        <tr>
+                            <td>void</td>
+                            <td>Sin tipo(uso especial)</td>
+                        </tr>
+                    </table>
+                    <em>Tipo de datos en C.</em>
+                </div>
+                <p>Algunos ejemplos de variables de C serían:</p>
+                <div class="code">
+                    <code>
+                        <pre>
+    float a;
+    int b,c;
+    char caracter, otro_caracter;
+                        </pre>
+                    </code>
+                </div>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Existen, además, cuatro modificadores de tipo, los cuales se aplican sobre
+                    los tipos de datos anteriormente citados. Los modificadores de tipo permiten cambiar el tamaño,
+                    etc., de los tipos de datos anteriormente especificados. Estos modificadores,
+                    que sintácticamente anteceden a la declaración del tipo de dato, son:
+                </p>
+                <div class="table">
+                    <table class="table__3">
+                        <tr>
+                            <th>Modificador</th>
+                            <th colspan="2">Tipos de Actuación</th>
+                            <th>Descripción</th>
+                        </tr>
+                        <tr>
+                            <td>signed</td>
+                            <td>char</td>
+                            <td>int</td>
+                            <td>Con signo(por defecto)</td>
+                        </tr>
+                        <tr>
+                            <td>unsigned</td>
+                            <td>char</td>
+                            <td>int</td>
+                            <td>Sin signo</td>
+                        </tr>
+                        <tr>
+                            <td>long</td>
+                            <td>int</td>
+                            <td>double</td>
+                            <td>Largo</td>
+                        </tr>
+                        <tr>
+                            <td>short</td>
+                            <td colspan="2">int</td>
+                            <td>Corto</td>
+                        </tr>
+                    </table>
+                    <em>Modificadores de los tipos de datos en C.</em>
+                </div>
+
+                <p>
+                    Es por ello que podemos declarar variables como:
+                </p>
+
+                <div class="code">
+                    <code>
+                        <pre>
+    unsigned char a;
+    long double b;
+    short int i;                       
+                        </pre>
+                    </code>
+                </div>
+
+                <p>
+                    Es posible, además, aplicar dos modificadores seguidos a un mismo tipo de
+                    datos, así, es posible definir una variable de tipo <em>unsigned long int</em> (entero largo sin
+                    signo). El rango de valores de que permite cada variable depende del sistema operativo
+                    sobre el cual se trabaje (MS-DOS, Windows95/98/NT/2000, UNIX/Linux), por lo cual
+                    conviene referirse al manual del compilador para conocerlo. De forma general, los
+                    sistemas operativos de 16 bits (MS-DOS, Windows 16 bits) poseen un rango y los de
+                    32 bits (Windows 32 bits, UNIX/Linux) otro.
+                </p>
+                <p>
+                    Además de los modificadores de tipo existen modificadores de acceso. Los
+                    modificadores de acceso limitan el uso que puede realizarse de las variables
+                    declaradas. Los modificadores de acceso anteceden a la declaración del tipo de dato de
+                    la variable y son los siguientes:
+                </p>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Modificador</th>
+                            <th>Efecto</th>
+                        </tr>
+                        <tr>
+                            <td>const</td>
+                            <td>Variable de valor constante</td>
+                        </tr>
+                        <tr>
+                            <td>volatile</td>
+                            <td>Variable cuyo valor es modificado externamente</td>
+                        </tr>
+                    </table>
+                    <em>Modificadores de acceso en C.</em>
+                </div>
+                <p>
+                    La declaración de una variable como <em>const</em> permite asegurarse de que su valor
+                    no será modificado por el programa, excepto en el momento de su declaración, en el
+                    cual debe asignársele un valor inicial. Así, si declaramos la siguiente variable:
+                </p>
+
+                <div class="code">
+                    <code>
+                        <pre>
+    const int x=237;                  
+                    </pre></code>
+                </div>
+
+                <p>
+                    Cualquier intento posterior de modificar el valor de x, tal como <em>x=x+5;</em>,
+                    producirá un error en tiempo de compilación.
+                </p>
+                <p>
+                    La declaración de una variable como <em>volatile</em>, indica al compilador que dicha
+                    variable puede modificarse por un proceso externo al propio programa (tal como la
+                    hora del sistema), y por ello, que no trate de optimizar dicha variable suponiéndole un
+                    valor constante, etc. Ello fuerza a que cada vez que se usa la variable, se realice una
+                    comprobación de su valor.
+                </p>
+
+                <p>
+                    Los modificadores <em>const</em> y <em>volatile</em> pueden usarse de forma conjunta en ciertos
+                    casos, por lo cual no son excluyentes el uno del otro. Ello es posible si se declara una
+                    variable que actualizara el reloj del sistema, (proceso externo al programa), y que no
+                    queremos pueda modificarse en el interior del programa. Por ello, podremos declarar:
+                </p>
+                <div class="code">
+                    <code>
+                        <pre>
+    volatile const unsigned long int hora;
+                    </pre></code>
+                </div>
+
+                <h2>2.3 - Declaración de variables y alcance.</h2>
+
+                
             </article>
         </main>
 
