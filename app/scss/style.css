@@ -23,9 +23,9 @@ a:hover {
   text-decoration: none;
 }
 
-li,
-li:visited,
-li:hover {
+.link,
+.link:visited,
+.link:hover {
   list-style: none;
   text-decoration: none;
 }
@@ -147,12 +147,16 @@ th {
   padding: 0 1rem;
 }
 
-.table > em {
+td {
+  text-align: justify;
+}
+
+.table {
   text-align: center;
 }
 
 .table__1 {
-  width: 100%;
+  width: 80%;
 }
 
 @media screen and (max-width: 320px) {

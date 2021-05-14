@@ -227,8 +227,182 @@
                 </div>
 
                 <h2>2.3 - Declaración de variables y alcance.</h2>
+                <p>
+                    En C, las variables pueden ser declaradas en cuatro lugares del módulo del
+                    programa:
+                </p>
+                <ul>
+                    <li>Fuera de todas las funciones del programa, son las llamadas variables globales,
+                        accesibles desde cualquier parte del programa.</li>
+                    <li>Dentro de una función, son las llamadas variables locales, accesibles tan solo
+                        por la función en las que se declaran.</li>
+                    <li>Como parámetros a la función, accesibles de igual forma que si se declararan
+                        dentro de la función.</li>
+                    <li>Dentro de un bloque de código del programa, accesible tan solo dentro del
+                        bloque donde se declara. Esta forma de declaración puede interpretarse como
+                        una variable local del bloque donde se declara.</li>
+                </ul>
+                <p>
+                    Para un mejor comprensión, veamos un pequeño programa de C con variables
+                    declaradas de las cuatro formas posibles:
+                </p>
 
-                
+                <div class="code">
+                    <code>
+                        <pre>
+    #include &lt;stdio.h>
+    int sum;    /* Variable global, accesible desde cualquier parte */
+                /* del programa*/
+    void suma(int x)    /* Variable local declarada como parámetro, */
+                        /* accesible solo por la función suma*/
+    {
+        sum=sum+x;
+        return;
+    }
+    void intercambio(int *a,int *b)
+    {
+        if (*a>*b)
+        {
+            int inter;  /* Variable local, accesible solo dentro del */
+                        /* bloque donde se declara*/
+            inter=*a;
+            *a=*b;
+            *b=inter;
+        }
+        return;
+    }
+    int main(void) /*Función principal del programa*/
+    {
+    int contador,a=9,b=0;   /*Variables locales, accesibles solo */
+                            /* por main*/
+    sum=0;
+    intercambio(&a,&b);
+    for(contador=a;contador<=b;contador++) suma(contador);
+    printf(“%d\n”,suma);
+    return(0);
+    }                                
+                        </pre>
+                    </code>
+                </div>
+
+                <h2>2.4 - Especificadores de almacenamiento de los tipos de
+                    datos.</h2>
+                <p>
+                    Una vez explicada la declaración de variables y su alcance, vamos a proceder a
+                    explicar como es posible modificar el alcance del almacenamiento de los datos. Ello es
+                    posible realizarlo mediante los especificadores de almacenamiento. Existen cuatro
+                    especificadores de almacenamiento. Estos especificadores de almacenamiento, cuando
+                    se usan, deben preceder a la declaración del tipo de dato de la variable. Estos
+                    especificadores de almacenamiento son:
+                </p>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Especificador de almacenamiento</th>
+                            <th>Efecto</th>
+                        </tr>
+                        <tr>
+                            <td>auto</td>
+                            <td>Variable local(por defecto)</td>
+                        </tr>
+                        <tr>
+                            <td>extern</td>
+                            <td>Variable externa</td>
+                        </tr>
+                        <tr>
+                            <td>static</td>
+                            <td>Varaiable estatica</td>
+                        </tr>
+                        <tr>
+                            <td>register</td>
+                            <td>Variable registro</td>
+                        </tr>
+                    </table>
+                    <em>Especificadores de almacenamiento en C</em>
+                </div>
+                <p>
+                    El especificador <em>auto</em> se usa para declarar que una variable local existe
+                    solamente mientras estemos dentro de la subrutina o bloque de programa donde se
+                    declara, pero, dado que por defecto toda variable local es <em>auto</em>, no suele usarse.
+                </p>
+
+                <p>
+                    El especificador <em>extern</em> se usa en el desarrollo de programas compuestos por
+                    varios módulos. El modificador <em>extern</em> se usa sobre las variables globales del módulo,
+                    de forma que si una variable global se declara como <em>extern</em>, el compilador no crea un
+                    almacenamiento para ella en memoria, sino que, tan solo tiene en cuenta que dicha
+                    variable ya ha sido declarada en otro modulo del programa y es del tipo de dato que se
+                    indica.
+                </p>
+                <p>
+                    El especificador <em>static</em> actúa según el alcance de la variable:
+                </p>
+                <ul>
+                    <li>Para variables locales, el especificador <em>static</em> indica que dicha variable local
+                        debe almacenarse de forma permanente en memoria, tal y como si fuera una
+                        variable global, pero su alcance será el que correspondería a una variable local
+                        declarada en la subrutina o bloque. El principal efecto que provoca la
+                        declaración como <em>static</em> de una variable local es el hecho de que la variable
+                        conserva su valor entre llamadas a la función.</li>
+
+                    <li>Para variables locales, el especificador <em>static</em> indica que dicha variable local
+                        debe almacenarse de forma permanente en memoria, tal y como si fuera una
+                        variable global, pero su alcance será el que correspondería a una variable local
+                        declarada en la subrutina o bloque. El principal efecto que provoca la
+                        declaración como <em>static</em> de una variable local es el hecho de que la variable
+                        conserva su valor entre llamadas a la función.</li>
+                </ul>
+                <p>
+                    El especificador <em>register</em> se aplica solo a variables locales de tipo char e int.
+                    Dicho especificador indica al compilador que, caso de ser posible, mantenga esa
+                    variable en un registro de la CPU y no cree por ello una variable en la memoria. Se
+                    pueden declarar como <em>register</em> cuantas variables se deseen, pues el compilador ignorara
+                    dicha declaración caso de no poder ser satisfecha. El uso de variables con
+                    especificador de almacenamiento <em>register</em> permite colocar en registros de la CPU
+                    variables muy frecuentemente usadas, tales como contadores de bucles, etc.
+                </p>
+
+                <p>Algunos ejemplos de uso de los especificadores de almacenamiento son:</p>
+                <div class="code">
+                    <code>
+                        <pre>
+    register unsigned int a;
+    static float b;
+    extern int c;
+    static const unsigned long int d;
+                        </pre>
+                    </code>
+                </div>
+
+                <h2>2.5 - Constantes.</h2>
+                <p>
+                    En C, las constantes se refieren a los valores fijos que el programa no puede
+                    alterar. Algunos ejemplos de constantes de C son:
+                </p>
+                <div>
+                    <table>
+                        <tr>
+                            <th>Tipo de Dato</th>
+                            <th>Constantes de ejemplo</th>
+                        </tr>
+                        <tr>
+                            <td>char</td>
+                            <td>"a" "9" "Q"</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <td>1 -34 2100</td>
+                        </tr>
+                        <tr>
+                            <td>long int</td>
+                            <td>-34 67894L 456</td>
+                        </tr>
+                        <tr>
+                            <td>short int</td>
+                            <td>10 -12 1500</td>
+                        </tr>
+                    </table>
+                </div>
             </article>
         </main>
 
