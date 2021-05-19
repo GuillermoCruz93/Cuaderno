@@ -18,6 +18,7 @@
 
         <nav class="page-nav">
             <a href="#">Home</a>
+            <a href="/Pseudocodigo/tema1.html">Pseudocodigo</a>
             <a href="/LenguajeC/tema1.html">Lenguaje C</a>
         </nav>
 
@@ -318,7 +319,7 @@
                             <td>Variable registro</td>
                         </tr>
                     </table>
-                    <em>Especificadores de almacenamiento en C</em>
+                    <em>Especificadores de almacenamiento en C.</em>
                 </div>
                 <p>
                     El especificador <em>auto</em> se usa para declarar que una variable local existe
@@ -379,30 +380,151 @@
                     En C, las constantes se refieren a los valores fijos que el programa no puede
                     alterar. Algunos ejemplos de constantes de C son:
                 </p>
-                <div>
+                <div class="table">
                     <table>
                         <tr>
                             <th>Tipo de Dato</th>
-                            <th>Constantes de ejemplo</th>
+                            <th colspan="3">Constantes de ejemplo</th>
                         </tr>
                         <tr>
                             <td>char</td>
-                            <td>"a" "9" "Q"</td>
+                            <td>"a"</td>
+                            <td>"9"</td>
+                            <td>"Q"</td>
                         </tr>
                         <tr>
                             <td>int</td>
-                            <td>1 -34 2100</td>
+                            <td>1</td>
+                            <td>-34</td>
+                            <td>2100</td>
                         </tr>
                         <tr>
                             <td>long int</td>
-                            <td>-34 67894L 456</td>
+                            <td>-34</td>
+                            <td>67894L</td>
+                            <td>456</td>
                         </tr>
                         <tr>
                             <td>short int</td>
-                            <td>10 -12 1500</td>
+                            <td>10</td>
+                            <td>-12</td>
+                            <td>1500</td>
+                        </tr>
+                        <tr>
+                            <td>unsigned int</td>
+                            <td>45600U</td>
+                            <td>345</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>float</td>
+                            <td>12.45</td>
+                            <td>4.34e-3</td>
+                            <td>-2.8e9</td>
+                        </tr>
+                        <tr>
+                            <td>double</td>
+                            <td>-34.657</td>
+                            <td>2.2e-7</td>
+                            <td>1.0e100</td>
                         </tr>
                     </table>
+                    <em>Tipos de constantes en C.</em>
                 </div>
+                <p>
+                    Existen, además, algunos tipos de constantes, distintos a los anteriores, que es
+                    necesario resaltar de forma particular. Estos tipos de constantes son las constantes
+                    hexadecimales y octales, las constantes de cadena, y las constantes de barra invertida.
+                </p>
+                <p>
+                    Las constantes hexadecimales y octales son constantes enteras, pero definidas
+                    en base 16 (constantes hexadecimales) o en base 8 (constantes octales). Las constantes
+                    de tipo hexadecimal comienzan por los caracteres 0x seguidas del número deseado. Las
+                    constantes de tipo octal comienzan por un cero (0). Por ejemplo, son constantes
+                    hexadecimales 0x34 (52 decimal), 0xFFFF (65535 decimal); y constantes octales 011
+                    (9 decimal), 0173 (123 decimal)
+                </p>
+                <p>
+                    Las constantes de cadena son conjuntos de caracteres que se encierran entre
+                    comillas dobles. Por ejemplo, son constantes de cadena <em> “Esto es una constante de
+                        cadena”, “Estos son unos apuntes de C”</em>, etc.
+                </p>
+                <p>
+                    Las constantes de caracteres de barra invertida se usan para introducir
+                    caracteres que es imposible introducir por el teclado (tales como retorno de carro, etc.).
+                    Estas constantes son proporcionadas por C para que sea posible introducir dichas
+                    caracteres como constantes en los programas en los cuales sea necesario. Estas
+                    constantes de caracteres de barra invertida son:
+                </p>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Significado</th>
+                        </tr>
+                        <tr>
+                            <td>\b</td>
+                            <td>Retroceso</td>
+                        </tr>
+                        <tr>
+                            <td>\f</td>
+                            <td>Alinacion de hoja</td>
+                        </tr>
+                        <tr>
+                            <td>\n</td>
+                            <td>Nueva linea</td>
+                        </tr>
+                        <tr>
+                            <td>\r</td>
+                            <td>Retorno de carro</td>
+                        </tr>
+                        <tr>
+                            <td>\t</td>
+                            <td>Tabulador horizontal</td>
+                        </tr>
+                        <tr>
+                            <td>\"</td>
+                            <td>Doble comilla</td>
+                        </tr>
+                        <tr>
+                            <td>\'</td>
+                            <td>Comilla simple</td>
+                        </tr>
+                        <tr>
+                            <td>\0</td>
+                            <td>Nulo</td>
+                        </tr>
+                        <tr>
+                            <td>\\</td>
+                            <td>Barra invertida</td>
+                        </tr>
+                        <tr>
+                            <td>\v</td>
+                            <td>Tabulador vertical</td>
+                        </tr>
+                        <tr>
+                            <td>\a</td>
+                            <td>Alerta</td>
+                        </tr>
+                        <tr>
+                            <td>\o</td>
+                            <td>Constante octal</td>
+                        </tr>
+                        <tr>
+                            <td>\x</td>
+                            <td>Constante hexadecimal</td>
+                        </tr>
+                    </table>
+                    <em>Constantes de barra invertida en C.</em>
+                </div>
+                <p>
+                    El uso de las constantes de barra invertida es igual que el de cualquier otro
+                    carácter, así, si ch es una variable de tipo char, podemos hacer: ch=‘\t’, o ch=‘\x20’
+                    (carácter espacio), etc., de igual forma que realizaríamos con cualquier otra constante
+                    de carácter. Además, las constantes de barra invertida pueden usarse en el interior de
+                    constantes de cadena como un carácter más, por ello, podemos poner escribir la
+                    constante de cadena: <em>"Esto es una linea\n"</em>.
+                </p>
             </article>
         </main>
 
